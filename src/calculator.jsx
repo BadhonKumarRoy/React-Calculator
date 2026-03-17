@@ -62,7 +62,7 @@ const Calculator = () => {
       <div className="calculator-display">
         <input id="display" readOnly value={display} />
       </div>
-      <div id="keys">
+      <div id="keys" className="keys">
         {/* row1 */}
         <button id="works" onClick={clearDisplay}>
           AC
@@ -104,7 +104,7 @@ const Calculator = () => {
         <button id="number" onClick={() => inputDigit("6")}>
           6
         </button>
-        <button id="operator" onClick={() => inputOperator("-")}>
+        <button id="works" onClick={() => inputOperator("-")}>
           -
         </button>
         {/* row4 */}
@@ -124,10 +124,10 @@ const Calculator = () => {
         <button className="zero" onClick={() => inputDigit("0")}>
           0
         </button>
-        <button id="number" onClick={() => inputDigit(".")}>
+        <button id="operator" onClick={() => inputDigit(".")}>
           .
         </button>
-        <button id="function" onClick={() => performOperation()}>=</button>
+        <button id="works" onClick={() => performOperation()}>=</button>
       </div>
     </div>
   );
