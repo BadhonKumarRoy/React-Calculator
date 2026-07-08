@@ -60,9 +60,8 @@ const Calculator = () => {
 
   return (
     <div className="calculator">
-      <div className="calculator-display">
+      <div className="calculator-display"></div>
         <input id="display" readOnly value={display} />
-      </div>
       <div id="keys" className="keys">
         {/* row1 */}
         <button className="left_col" id="number" onClick={() => inputDigit("7")}>
@@ -76,14 +75,14 @@ const Calculator = () => {
         </button>
         <button
           className="forth_col"
-          id="works"
+          id="del"
           onClick={() => {
             del();
           }}
         >
           Del
         </button>
-        <button className="fifth_col" id="works" onClick={clearDisplay}>
+        <button className="fifth_col" id="ac" onClick={clearDisplay}>
           AC
         </button>
         <button className="left_col" id="number" onClick={() => inputDigit("4")}>
