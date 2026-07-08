@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./styles/calculator.css";
 
 const Calculator = () => {
+  
   const [display, setDisplay] = useState("0");
   // const [operand, setOperand] = useState(null);
   const [lastInput, setLastInput] = useState("");
@@ -64,10 +65,17 @@ const Calculator = () => {
       </div>
       <div id="keys" className="keys">
         {/* row1 */}
-        <button id="works" onClick={clearDisplay}>
-          AC
+        <button className="left_col" id="number" onClick={() => inputDigit("7")}>
+          7
+        </button>
+        <button className="left_col" id="number" onClick={() => inputDigit("8")}>
+          8
+        </button>
+        <button className="left_col" id="number" onClick={() => inputDigit("9")}>
+          9
         </button>
         <button
+          className="forth_col"
           id="works"
           onClick={() => {
             del();
@@ -75,59 +83,57 @@ const Calculator = () => {
         >
           Del
         </button>
-        <button id="operator" onClick={() => inputOperator("%")}>
-          %
+        <button className="fifth_col" id="works" onClick={clearDisplay}>
+          AC
         </button>
-        <button id="operator" onClick={() => inputOperator("÷")}>
+        <button className="left_col" id="number" onClick={() => inputDigit("4")}>
+          4
+        </button>
+        <button className="left_col" id="number" onClick={() => inputDigit("5")}>
+          5
+        </button>
+        <button className="left_col" id="number" onClick={() => inputDigit("6")}>
+          6
+        </button>
+        <button className="forth_col" id="operator" onClick={() => inputOperator("×")}>
+          ×
+        </button>
+        <button className="fifth_col" id="operator" onClick={() => inputOperator("÷")}>
           ÷
         </button>
         {/* row2 */}
-        <button id="number" onClick={() => inputDigit("7")}>
-          7
-        </button>
-        <button id="number" onClick={() => inputDigit("8")}>
-          8
-        </button>
-        <button id="number" onClick={() => inputDigit("9")}>
-          9
-        </button>
-        <button id="operator" onClick={() => inputOperator("×")}>
-          ×
-        </button>
-        {/* row3 */}
-        <button id="number" onClick={() => inputDigit("4")}>
-          4
-        </button>
-        <button id="number" onClick={() => inputDigit("5")}>
-          5
-        </button>
-        <button id="number" onClick={() => inputDigit("6")}>
-          6
-        </button>
-        <button id="works" onClick={() => inputOperator("-")}>
-          -
-        </button>
-        {/* row4 */}
-        <button id="number" onClick={() => inputDigit("1")}>
+        <button className="left_col" id="number" onClick={() => inputDigit("1")}>
           1
         </button>
-        <button id="number" onClick={() => inputDigit("2")}>
+        <button className="left_col" id="number" onClick={() => inputDigit("2")}>
           2
         </button>
-        <button id="number" onClick={() => inputDigit("3")}>
+        <button className="left_col" id="number" onClick={() => inputDigit("3")}>
           3
         </button>
-        <button id="works" onClick={() => inputOperator("+")}>
+        <button className="forth_col" id="works" onClick={() => inputOperator("+")}>
           +
         </button>
-        {/* row5 */}
-        <button className="zero" onClick={() => inputDigit("0")}>
+        <button className="fifth_col" id="works" onClick={() => inputOperator("-")}>
+          -
+        </button>
+        <button className="left_col" id="number" onClick={() => inputDigit("0")}>
           0
         </button>
-        <button id="operator" onClick={() => inputDigit(".")}>
+        <button className="left_col" id="operator" onClick={() => inputDigit(".")}>
           .
         </button>
-        <button id="works" onClick={() => performOperation()}>=</button>
+        <button className="left_col" id="operator" onClick={() => inputOperator("x10")}>
+          x10
+        </button>
+        <button className="forth_col" id="operator" onClick={() => inputOperator("%")}>
+          %(Ans)
+        </button>
+        <button className="fifth_col" id="works" onClick={() => performOperation()}>=</button>
+        
+        {/* row3 */}
+        {/* row4 */}
+        {/* row5 */}
       </div>
     </div>
   );
