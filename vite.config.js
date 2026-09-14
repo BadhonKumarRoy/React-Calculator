@@ -2,10 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: process.env.NETLIFY === "true" ? "/" : "/React-Calculator/",
+
+  base: mode === "github" ? "/React-Calculator/" : "/",
+
   server: {
     open: true,
   },
-});
+}));
